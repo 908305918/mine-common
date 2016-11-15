@@ -12,6 +12,6 @@ public class StateButtonActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_roundbutton);
+        super.setContentView(R.layout.activity_statebutton);
     }
 }
