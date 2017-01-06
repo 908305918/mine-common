@@ -41,6 +41,10 @@
         <activity android:name="com.lucy.picture.selector.PicSelectorActivity" />
         <activity android:name="com.lucy.tree.TreeActivity" />
         <activity android:name=".activity.StateButtonActivity" />
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"></activity>
 
         <receiver android:name="com.lucy.common.receiver.PhoneStateReceiver">
             <intent-filter>

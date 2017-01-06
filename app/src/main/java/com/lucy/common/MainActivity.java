@@ -4,6 +4,7 @@ import com.lucy.bigimage.LargeImageActivity;
 import com.lucy.common.activity.MapActivity;
 import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
+import com.lucy.common.activity.WebViewActivity;
 import com.lucy.common.view.MarqueeTextView;
 import com.lucy.picture.selector.PicSelectorActivity;
 import com.lucy.tree.TreeActivity;
@@ -46,7 +47,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "item7", "item8", "item9", "item10", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "item8", "item9", "item10", "item11", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -84,6 +85,10 @@ public class MainActivity extends Activity {
                             break;
                         case 5:
                             intent = new Intent(MainActivity.this, StateButtonActivity.class);
+                            startActivity(intent);
+                            break;
+                        case 6:
+                            intent = new Intent(MainActivity.this, WebViewActivity.class);
                             startActivity(intent);
                             break;
                     }

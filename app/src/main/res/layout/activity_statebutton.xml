@@ -13,6 +13,6 @@
         android:textColor="#FFFFFF"
         app:btnCornerRadius="3dp"
         app:btnPressedRatio="0.9"
-        app:btnSolidColor="#03A9F4" />
+        app:btnSolidColor="#FF0000" />
 
 </LinearLayout>
