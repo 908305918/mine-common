@@ -17,7 +17,7 @@ public abstract class BaseView<T extends BasePresenter> implements IBaseView<T> 
 
     protected Context mContext;
     protected View mRootView;
-    protected BasePresenter mPresenter;
+    protected T mPresenter;
 
     public BaseView(Context context) {
         mContext = context;
