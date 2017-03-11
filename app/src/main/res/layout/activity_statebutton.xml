@@ -7,6 +7,7 @@
     android:padding="20dip">
 
     <com.lucy.common.view.StateButton
+        android:id="@+id/state_button"
         android:layout_width="match_parent"
         android:layout_height="50dip"
         android:text="Text"
@@ -14,5 +15,11 @@
         app:btnCornerRadius="3dp"
         app:btnPressedRatio="0.9"
         app:btnSolidColor="#FF0000" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip" />
 
 </LinearLayout>

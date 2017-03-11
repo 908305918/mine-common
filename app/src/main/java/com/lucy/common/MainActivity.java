@@ -97,8 +97,8 @@ public class MainActivity extends Activity {
                                 Utility.showToast(MainActivity.this, "无网");
                             }
 
-                            //intent = new Intent(MainActivity.this, WebViewActivity.class);
-                            //startActivity(intent);
+                            intent = new Intent(MainActivity.this, WebViewActivity.class);
+                            startActivity(intent);
 
                             break;
                     }
