@@ -5,6 +5,8 @@ import com.lucy.common.activity.MapActivity;
 import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.WebViewActivity;
+import com.lucy.common.util.NetUtil;
+import com.lucy.common.util.Utility;
 import com.lucy.common.view.MarqueeTextView;
 import com.lucy.picture.selector.PicSelectorActivity;
 import com.lucy.tree.TreeActivity;
@@ -43,6 +45,7 @@ public class MainActivity extends Activity {
         textView = (MarqueeTextView) findViewById(R.id.textview);
         textView.init();
         textView.startScroll();
+
     }
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
@@ -88,8 +91,15 @@ public class MainActivity extends Activity {
                             startActivity(intent);
                             break;
                         case 6:
-                            intent = new Intent(MainActivity.this, WebViewActivity.class);
-                            startActivity(intent);
+                            if (NetUtil.ping()) {
+                                Utility.showToast(MainActivity.this, "有网");
+                            } else {
+                                Utility.showToast(MainActivity.this, "无网");
+                            }
+
+                            //intent = new Intent(MainActivity.this, WebViewActivity.class);
+                            //startActivity(intent);
+
                             break;
                     }
                 }
