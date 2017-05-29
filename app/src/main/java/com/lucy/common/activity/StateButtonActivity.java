@@ -35,21 +35,24 @@ public class StateButtonActivity extends Activity {
         final StateButton button = (StateButton) findViewById(R.id.state_button);
         final TextView textView = (TextView) findViewById(R.id.tv_content);
 
-        RxView.clicks(button).flatMap(new Function<Object, ObservableSource<Response>>() {
-            @Override
-            public ObservableSource<Response> apply(Object o) throws Exception {
-                return loadData();
-            }
-        }).materialize().subscribe(new Consumer<Notification<Response>>() {
-            @Override
-            public void accept(Notification<Response> o) throws Exception {
-                if (o.isOnNext()) {
-                    textView.setText(o.getValue().body().string());
-                } else if (o.isOnError()) {
-                    textView.setText(o.getError().toString());
-                }
-            }
-        });
+        RxView.clicks(button)
+                .flatMap(new Function<Object, ObservableSource<Response>>() {
+                    @Override
+                    public ObservableSource<Response> apply(Object o) throws Exception {
+                        return loadData();
+                    }
+                })
+                .materialize()
+                .subscribe(new Consumer<Notification<Response>>() {
+                    @Override
+                    public void accept(Notification<Response> o) throws Exception {
+                        if (o.isOnNext()) {
+                            textView.setText(o.getValue().body().string());
+                        } else if (o.isOnError()) {
+                            textView.setText(o.getError().toString());
+                        }
+                    }
+                });
     }
 
     private Observable<Response> loadData() {
