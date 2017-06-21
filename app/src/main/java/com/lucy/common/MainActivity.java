@@ -1,5 +1,16 @@
 package com.lucy.common;
 
+import com.lucy.bigimage.LargeImageActivity;
+import com.lucy.common.activity.MapActivity;
+import com.lucy.common.activity.StateButtonActivity;
+import com.lucy.common.activity.TestCommonAdapterActivity;
+import com.lucy.common.activity.WebViewActivity;
+import com.lucy.common.util.NetUtil;
+import com.lucy.common.util.Utility;
+import com.lucy.common.view.MarqueeTextView;
+import com.lucy.picture.selector.PicSelectorActivity;
+import com.lucy.tree.TreeActivity;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,17 +28,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lucy.bigimage.LargeImageActivity;
-import com.lucy.common.activity.MapActivity;
-import com.lucy.common.activity.StateButtonActivity;
-import com.lucy.common.activity.TestCommonAdapterActivity;
-import com.lucy.common.activity.WebViewActivity;
-import com.lucy.common.util.NetUtil;
-import com.lucy.common.util.Utility;
-import com.lucy.common.view.MarqueeTextView;
-import com.lucy.picture.selector.PicSelectorActivity;
-import com.lucy.tree.TreeActivity;
-
 public class MainActivity extends Activity {
     private RecyclerView mRecyclerView;
     private MarqueeTextView textView;
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new TestAdapter());
         mRecyclerView
-                .addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                .addItemDecoration(new DividerItemDecoratio(this, LinearLayoutManager.VERTICAL));
 
         textView = (MarqueeTextView) findViewById(R.id.textview);
         textView.init();
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "RxJava", "item9", "item10", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "item8", "item9", "item10", "item11", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -99,8 +99,6 @@ public class MainActivity extends Activity {
 
                             intent = new Intent(MainActivity.this, WebViewActivity.class);
                             startActivity(intent);
-                            break;
-                        case 7:
 
                             break;
                     }
@@ -125,7 +123,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+    public class DividerItemDecoratio extends RecyclerView.ItemDecoration {
 
         /**
          * RecyclerView的布局方向，默认纵向
@@ -141,7 +139,7 @@ public class MainActivity extends Activity {
          */
         private Paint mPaint;
 
-        public DividerItemDecoration(Context context, int orientation) {
+        public DividerItemDecoratio(Context context, int orientation) {
             if (orientation != LinearLayoutManager.HORIZONTAL
                     && orientation != LinearLayoutManager.VERTICAL) {
                 throw new IllegalArgumentException("请传入正确的参数");

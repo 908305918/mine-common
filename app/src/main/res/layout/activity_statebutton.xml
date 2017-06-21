@@ -10,7 +10,18 @@
         android:id="@+id/state_button"
         android:layout_width="match_parent"
         android:layout_height="50dip"
-        android:text="Text"
+        android:text="压缩"
+        android:textColor="#FFFFFF"
+        app:btnCornerRadius="3dp"
+        app:btnPressedRatio="0.9"
+        app:btnSolidColor="#FF0000" />
+
+    <com.lucy.common.view.StateButton
+        android:id="@+id/state_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginTop="10dip"
+        android:text="不压缩"
         android:textColor="#FFFFFF"
         app:btnCornerRadius="3dp"
         app:btnPressedRatio="0.9"
