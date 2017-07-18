@@ -1,4 +1,4 @@
-package com.lucy.common.recyclerview;
+package com.lucy.recyclerview;
 
 import android.content.Context;
 import android.graphics.Canvas;
