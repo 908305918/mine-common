@@ -42,16 +42,16 @@ public class ImagePickerActivity extends Activity {
     private void initViews() {
         mRecyclerView = (RecyclerView) this.findViewById(R.id.rv_picture);
         mSendImageBut = (Button) this.findViewById(R.id.btn_send_image);
-        mImageAdapter = new ImageAdapter(this,mAllImageList,mSendImageBut);
+        mImageAdapter = new ImageAdapter(this, mAllImageList, mSendImageBut);
 
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
-        mRecyclerView.addItemDecoration(new GridDividerItemDecoration(this,3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.addItemDecoration(new GridDividerItemDecoration(this, 3));
         mRecyclerView.setAdapter(mImageAdapter);
     }
 
 
     /**
-     * 利用ContentProvider扫描手机中的图片，此方法在运行在子线程中 完成图片的扫描
+     * 利用ContentProvider扫描手机中的图片，此方法在运行在子线程中 完成图片的扫描。
      */
     private void scanImages() {
         if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
