@@ -3,28 +3,28 @@
     android:id="@+id/frame_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants" >
+    android:descendantFocusability="blocksDescendants">
 
     <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="fill_parent"
+        android:id="@+id/iv_picture"
+        android:layout_width="match_parent"
         android:layout_height="100dip"
-        android:background="@drawable/qiqiu"
         android:scaleType="centerCrop" />
 
     <LinearLayout
-        android:id="@+id/checkbox_ll"
+        android:id="@+id/ll_checkbox"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="top|right"
-        android:gravity="center" >
+        android:gravity="center">
 
         <CheckBox
             android:id="@+id/item_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/picture_select_bg"
-            android:button="@null" />
+            android:background="@drawable/item_image_checked"
+            android:button="@null"
+            android:clickable="false" />
     </LinearLayout>
 
 </FrameLayout>

@@ -1,16 +1,5 @@
 package com.lucy.common;
 
-import com.lucy.bigimage.LargeImageActivity;
-import com.lucy.common.activity.MapActivity;
-import com.lucy.common.activity.StateButtonActivity;
-import com.lucy.common.activity.TestCommonAdapterActivity;
-import com.lucy.common.activity.WebViewActivity;
-import com.lucy.common.util.NetUtil;
-import com.lucy.common.util.Utility;
-import com.lucy.common.view.MarqueeTextView;
-import com.lucy.picture.selector.PicSelectorActivity;
-import com.lucy.tree.TreeActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +16,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.cms.imagepicker.ImagePickerActivity;
+import com.lucy.bigimage.LargeImageActivity;
+import com.lucy.common.activity.MapActivity;
+import com.lucy.common.activity.StateButtonActivity;
+import com.lucy.common.activity.TestCommonAdapterActivity;
+import com.lucy.common.activity.WebViewActivity;
+import com.lucy.common.util.NetUtil;
+import com.lucy.common.util.Utility;
+import com.lucy.common.view.MarqueeTextView;
+import com.lucy.tree.TreeActivity;
 
 public class MainActivity extends Activity {
     private RecyclerView mRecyclerView;
@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
                             startActivity(intent);
                             break;
                         case 2:
-                            intent = new Intent(MainActivity.this, PicSelectorActivity.class);
+                            intent = new Intent(MainActivity.this, ImagePickerActivity.class);
                             startActivity(intent);
                             break;
                         case 3:

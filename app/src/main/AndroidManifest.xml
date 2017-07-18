@@ -24,7 +24,7 @@
     <application
         android:name=".CustomApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
@@ -39,13 +39,12 @@
         <activity android:name="com.lucy.bigimage.LargeImageActivity" />
         <activity android:name="com.lucy.common.activity.TestCommonAdapterActivity" />
         <activity android:name="com.lucy.common.activity.MapActivity" />
-        <activity android:name="com.lucy.picture.selector.PicSelectorActivity" />
         <activity android:name="com.lucy.tree.TreeActivity" />
         <activity android:name=".activity.StateButtonActivity" />
         <activity
             android:name=".activity.WebViewActivity"
             android:configChanges="orientation|screenSize"
-            android:hardwareAccelerated="true"></activity>
+            android:hardwareAccelerated="true"/>
 
         <receiver android:name="com.lucy.common.receiver.PhoneStateReceiver">
             <intent-filter>
