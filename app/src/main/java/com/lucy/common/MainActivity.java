@@ -22,6 +22,7 @@ import com.lucy.bigimage.LargeImageActivity;
 import com.lucy.common.activity.MapActivity;
 import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
+import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
 import com.lucy.common.util.NetUtil;
 import com.lucy.common.util.Utility;
@@ -50,7 +51,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "item8", "item9", "item10", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "TextView", "item9", "item10", "item11", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -91,15 +92,12 @@ public class MainActivity extends Activity {
                             startActivity(intent);
                             break;
                         case 6:
-                            if (NetUtil.ping()) {
-                                Utility.showToast(MainActivity.this, "有网");
-                            } else {
-                                Utility.showToast(MainActivity.this, "无网");
-                            }
-
                             intent = new Intent(MainActivity.this, WebViewActivity.class);
                             startActivity(intent);
-
+                            break;
+                        case 7:
+                            intent = new Intent(MainActivity.this, TextViewActivity.class);
+                            startActivity(intent);
                             break;
                     }
                 }

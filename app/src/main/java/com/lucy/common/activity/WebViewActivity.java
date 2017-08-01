@@ -8,6 +8,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.VideoView;
 
@@ -31,12 +32,20 @@ public class WebViewActivity extends Activity {
 
         initView();
 
-        mWebView.loadUrl("http://wap.cmread.com/clt/publish/clt/pzx/share/video/index.jsp?c=14645772&WD_CP_ID=000000&API_USER=meihaoanhui");
+        mWebView.loadUrl("http://192.168.30.182:9090/iptv/template/HY320509000002");
     }
 
     private void initView() {
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);//启用支持javascript
+        mWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+
         mWebView.setWebChromeClient(new CustomWebViewChromeClient());
     }
 

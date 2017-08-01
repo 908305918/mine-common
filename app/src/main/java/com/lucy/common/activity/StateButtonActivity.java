@@ -37,8 +37,6 @@ public class StateButtonActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //request(true);
-                boolean isOpen = NotificationsUtils.isNotificationEnabled(StateButtonActivity.this);
-                mTextView.setText("通知栏是否开启：" + isOpen);
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
