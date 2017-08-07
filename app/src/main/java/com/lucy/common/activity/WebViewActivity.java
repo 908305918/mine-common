@@ -12,7 +12,9 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.VideoView;
 
+import com.cms.jsbridge.JsBridge;
 import com.lucy.common.R;
+import com.lucy.common.jsaction.DefaultJsAction;
 import com.lucy.common.util.ViewHelper;
 
 /**
@@ -32,13 +34,13 @@ public class WebViewActivity extends Activity {
 
         initView();
 
-        mWebView.loadUrl("http://192.168.30.182:9090/iptv/template/HY320509000002");
+        mWebView.loadUrl("file:///android_asset/test_js.html");
     }
 
     private void initView() {
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);//启用支持javascript
-        mWebView.setWebViewClient(new WebViewClient(){
+        mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
@@ -47,6 +49,9 @@ public class WebViewActivity extends Activity {
         });
 
         mWebView.setWebChromeClient(new CustomWebViewChromeClient());
+
+        JsBridge.getInstance().init(this, mWebView)
+                .addJsAction(DefaultJsAction.ACTION, DefaultJsAction.class);
     }
 
 
