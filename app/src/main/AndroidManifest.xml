@@ -55,6 +55,7 @@
         </receiver>
 
         <activity android:name=".activity.TextViewActivity" />
+        <activity android:name="com.lucy.lifecycle.LifecycleTestActivity"/>
 
     </application>
 

@@ -1,6 +1,7 @@
 package com.lucy.common;
 
 import android.app.Activity;
+import android.arch.lifecycle.LifecycleActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -27,6 +28,7 @@ import com.lucy.common.activity.WebViewActivity;
 import com.lucy.common.util.NetUtil;
 import com.lucy.common.util.Utility;
 import com.lucy.common.view.MarqueeTextView;
+import com.lucy.lifecycle.LifecycleTestActivity;
 import com.lucy.tree.TreeActivity;
 
 public class MainActivity extends Activity {
@@ -51,7 +53,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "TextView", "item9", "item10", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "item10", "item11", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -97,6 +99,10 @@ public class MainActivity extends Activity {
                             break;
                         case 7:
                             intent = new Intent(MainActivity.this, TextViewActivity.class);
+                            startActivity(intent);
+                            break;
+                        case 8:
+                            intent = new Intent(MainActivity.this, LifecycleTestActivity.class);
                             startActivity(intent);
                             break;
                     }
