@@ -41,7 +41,9 @@
         <activity android:name=".activity.TestCommonAdapterActivity" />
         <activity android:name=".activity.MapActivity" />
         <activity android:name="com.lucy.tree.TreeActivity" />
-        <activity android:name=".activity.StateButtonActivity" />
+        <activity
+            android:name=".activity.StateButtonActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.WebViewActivity"
             android:configChanges="orientation|screenSize"

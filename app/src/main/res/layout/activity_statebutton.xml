@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dip">
+    android:layout_height="match_parent">
 
-    <com.lucy.common.view.StateButton
-        android:id="@+id/state_button"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:text="压缩"
-        android:textColor="#FFFFFF"
-        app:btnCornerRadius="3dp"
-        app:btnPressedRatio="0.9"
-        app:btnSolidColor="#FF0000" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dip">
 
-    <com.lucy.common.view.StateButton
-        android:id="@+id/state_cancel"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:layout_marginTop="10dip"
-        android:text="不压缩"
-        android:textColor="#FFFFFF"
-        app:btnCornerRadius="3dp"
-        app:btnPressedRatio="0.9"
-        app:btnSolidColor="#FF0000" />
+        <com.lucy.common.view.StateButton
+            android:id="@+id/state_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:text="压缩"
+            android:textColor="#FFFFFF"
+            app:btnCornerRadius="3dp"
+            app:btnPressedRatio="0.9"
+            app:btnSolidColor="#FF0000" />
 
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
+        <com.lucy.common.view.StateButton
+            android:id="@+id/state_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginTop="10dip"
+            android:text="不压缩"
+            android:textColor="#FFFFFF"
+            app:btnCornerRadius="3dp"
+            app:btnPressedRatio="0.9"
+            app:btnSolidColor="#FF0000" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip" />
+
+    </LinearLayout>
+
+    <com.lucy.common.view.DragFloatActionButton
+        android:id="@+id/float_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip" />
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_nav_item"
+        android:visibility="gone" />
 
-</LinearLayout>
+    <com.lucy.common.view.DragFrameLayout
+        android:id="@+id/float_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_nav_item" />
+</FrameLayout>

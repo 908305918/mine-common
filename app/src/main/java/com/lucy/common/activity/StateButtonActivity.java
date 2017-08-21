@@ -45,6 +45,13 @@ public class StateButtonActivity extends Activity {
                 request(false);
             }
         });
+
+        findViewById(R.id.float_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void request(boolean gzip) {
