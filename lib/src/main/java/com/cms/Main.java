@@ -19,13 +19,13 @@ public class Main {
         long startTime = System.currentTimeMillis();
         String b = compressForGzip(a);
         String c = decompressForGzip(b);
-        System.out.println("Ñ¹Ëõ½âÑ¹£º" + (System.currentTimeMillis() - startTime));
+        System.out.println("å‹ç¼©è§£å‹ï¼š" + (System.currentTimeMillis() - startTime));
         System.out.println(c);
     }
 
 
     /**
-     * Gzip Ñ¹ËõÊı¾İ
+     * Gzip å‹ç¼©æ•°æ®
      *
      * @param unGzipStr
      * @return
@@ -44,7 +44,7 @@ public class Main {
             byte[] encode = baos.toByteArray();
             baos.flush();
             baos.close();
-            System.out.println("Ñ¹Ëõ£º" + (System.currentTimeMillis() - startTime));
+            System.out.println("å‹ç¼©ï¼š" + (System.currentTimeMillis() - startTime));
             return Base64.getEncoder().encodeToString(encode);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class Main {
     }
 
     /**
-     * Gzip½âÑ¹Êı¾İ
+     * Gzipè§£å‹æ•°æ®
      *
      * @param gzipStr
      * @return
@@ -79,7 +79,7 @@ public class Main {
             in.close();
             out.close();
             String result = out.toString();
-            System.out.println("½âÑ¹:" + (System.currentTimeMillis() - startTime));
+            System.out.println("è§£å‹:" + (System.currentTimeMillis() - startTime));
             return result;
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,9 +92,9 @@ public class Main {
         try {
             String encoding = "UTF-8";
             File file = new File(filePath);
-            if (file.isFile() && file.exists()) { //ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+            if (file.isFile() && file.exists()) { //åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
                 InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);//¿¼ÂÇµ½±àÂë¸ñÊ½
+                        new FileInputStream(file), encoding);//è€ƒè™‘åˆ°ç¼–ç æ ¼å¼
                 BufferedReader bufferedReader = new BufferedReader(read);
                 String line;
                 StringBuffer sb = new StringBuffer();
@@ -104,10 +104,10 @@ public class Main {
                 read.close();
                 return sb.toString();
             } else {
-                System.out.println("ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş");
+                System.out.println("æ‰¾ä¸åˆ°æŒ‡å®šçš„æ–‡ä»¶");
             }
         } catch (Exception e) {
-            System.out.println("¶ÁÈ¡ÎÄ¼şÄÚÈİ³ö´í");
+            System.out.println("è¯»å–æ–‡ä»¶å†…å®¹å‡ºé”™");
             e.printStackTrace();
         }
         return null;
