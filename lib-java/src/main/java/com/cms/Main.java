@@ -15,12 +15,13 @@ import java.util.Base64;
 public class Main {
 
     public static void main(String[] args) {
-        String a = read("C:\\Users\\WD\\Desktop\\a.txt");
-        long startTime = System.currentTimeMillis();
-        String b = compressForGzip(a);
-        String c = decompressForGzip(b);
-        System.out.println("压缩解压：" + (System.currentTimeMillis() - startTime));
-        System.out.println(c);
+//        String a = read("C:\\Users\\WD\\Desktop\\a.txt");
+//        long startTime = System.currentTimeMillis();
+//        String b = compressForGzip(a);
+//        String c = decompressForGzip(b);
+//        System.out.println("压缩解压：" + (System.currentTimeMillis() - startTime));
+//        System.out.println(c);
+
     }
 
 
