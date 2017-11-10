@@ -21,10 +21,12 @@ import android.widget.TextView;
 import com.cms.imagepicker.ImagePickerActivity;
 import com.lucy.bigimage.LargeImageActivity;
 import com.lucy.common.activity.MapActivity;
+import com.lucy.common.activity.RxJavaActivity;
 import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
+import com.lucy.common.databinding.RxJavaBinding;
 import com.lucy.common.util.NetUtil;
 import com.lucy.common.util.Utility;
 import com.lucy.common.view.MarqueeTextView;
@@ -53,7 +55,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "item10", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "RxJava", "item11", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -103,6 +105,10 @@ public class MainActivity extends Activity {
                             break;
                         case 8:
                             intent = new Intent(MainActivity.this, LifecycleTestActivity.class);
+                            startActivity(intent);
+                            break;
+                        case 9:
+                            intent = new Intent(MainActivity.this, RxJavaActivity.class);
                             startActivity(intent);
                             break;
                     }

@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.hss01248.lib.StytledDialog;
 import com.lucy.common.R;
-import com.lucy.common.util.NotificationsUtils;
 import com.lucy.common.view.StateButton;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -32,6 +31,7 @@ public class StateButtonActivity extends Activity {
         final StateButton button = (StateButton) findViewById(R.id.state_button);
         final StateButton button1 = (StateButton) findViewById(R.id.state_cancel);
         mTextView = (TextView) findViewById(R.id.tv_content);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

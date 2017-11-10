@@ -17,11 +17,11 @@ public class TextViewActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_text_view);
-        mTextView = ViewHelper.getView(this,R.id.tv_content);
-initText();
+        mTextView = ViewHelper.getView(this, R.id.tv_content);
+        initText();
     }
 
-    private void initText(){
+    private void initText() {
         Spanny spanny = new Spanny("Underline text", new UnderlineSpan())
                 .append("\nRed text", new ForegroundColorSpan(Color.RED))
                 .append("\nPlain text");

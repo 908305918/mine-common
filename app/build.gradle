@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.1'
 
     defaultConfig {
         applicationId "com.lucy.common"
@@ -17,12 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':imagepicker')
-    compile project(':jsbridge')
+    compile project(':lib-imagepicker')
+    compile project(':lib-jsbridge')
     compile 'net.idik:slimadapter:2.1.0', {
         exclude group: 'com.android.support'
     }
@@ -43,5 +46,7 @@ dependencies {
     compile 'android.arch.persistence.room:runtime:1.0.0-alpha7'
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha7"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha7"
+
+    compile 'com.tencent.sonic:sdk:1.0.0'
 
 }

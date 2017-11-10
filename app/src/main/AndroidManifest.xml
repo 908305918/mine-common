@@ -58,6 +58,7 @@
 
         <activity android:name=".activity.TextViewActivity" />
         <activity android:name="com.lucy.lifecycle.LifecycleTestActivity"/>
+        <activity android:name=".activity.RxJavaActivity"/>
 
     </application>
 
