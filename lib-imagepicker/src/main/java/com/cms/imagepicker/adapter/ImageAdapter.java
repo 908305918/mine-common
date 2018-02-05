@@ -26,13 +26,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     private Context mContext;
     private List<String> mDataList;
     private SparseBooleanArray mCheckedMap = new SparseBooleanArray(); //用来存储图片的选中情况
-    private Button mSendImageBut;
+    private Button mSendImageBtn;
 
 
     public ImageAdapter(Context context, List<String> dataList, Button sendImageBtn) {
         mContext = context;
         mDataList = dataList;
-        mSendImageBut = sendImageBtn;
+        mSendImageBtn = sendImageBtn;
     }
 
     @Override
@@ -63,11 +63,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
                     mCheckedMap.delete(position);
                 }
                 if (mCheckedMap.size() > 0) {
-                    mSendImageBut.setClickable(true);
-                    mSendImageBut.setText("发送(" + mCheckedMap.size() + "/" + "9)");
+                    mSendImageBtn.setClickable(true);
+                    mSendImageBtn.setText("发送(" + mCheckedMap.size() + "/" + "9)");
                 } else {
-                    mSendImageBut.setClickable(true);
-                    mSendImageBut.setText("发送");
+                    mSendImageBtn.setClickable(true);
+                    mSendImageBtn.setText("发送");
                 }
             }
         });
@@ -99,9 +99,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            imageView = (ImageView) itemView.findViewById(R.id.iv_picture);
-            checkBox = (CheckBox) itemView.findViewById(R.id.item_checkbox);
-            checkBoxLayout = (LinearLayout) itemView.findViewById(R.id.ll_checkbox);
+            imageView = itemView.findViewById(R.id.iv_picture);
+            checkBox = itemView.findViewById(R.id.item_checkbox);
+            checkBoxLayout = itemView.findViewById(R.id.ll_checkbox);
         }
     }
 }
