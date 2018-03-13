@@ -1,18 +1,11 @@
 package com.lucy.common;
 
 import android.app.Activity;
-import android.arch.lifecycle.LifecycleActivity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.State;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,9 +20,6 @@ import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
-import com.lucy.common.databinding.RxJavaBinding;
-import com.lucy.common.util.NetUtil;
-import com.lucy.common.util.Utility;
 import com.lucy.common.view.MarqueeTextView;
 import com.lucy.lifecycle.LifecycleTestActivity;
 import com.lucy.tree.TreeActivity;
