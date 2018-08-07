@@ -1,12 +1,10 @@
 package com.lucy.common.activity;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hss01248.lib.StytledDialog;
 import com.lucy.common.R;
 import com.lucy.common.view.StateButton;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -28,9 +26,9 @@ public class StateButtonActivity extends Activity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_statebutton);
 
-        final StateButton button = (StateButton) findViewById(R.id.state_button);
-        final StateButton button1 = (StateButton) findViewById(R.id.state_cancel);
-        mTextView = (TextView) findViewById(R.id.tv_content);
+        final StateButton button = findViewById(R.id.state_button);
+        final StateButton button1 = findViewById(R.id.state_cancel);
+        mTextView = findViewById(R.id.tv_content);
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +53,6 @@ public class StateButtonActivity extends Activity {
     }
 
     private void request(boolean gzip) {
-        final Dialog dialog = StytledDialog.showProgressDialog(this, "正在加载...", false, false);
         final long startTime = System.currentTimeMillis();
         Map<String, String> headers = new HashMap<>();
         if (!gzip) {
@@ -64,13 +61,11 @@ public class StateButtonActivity extends Activity {
         OkHttpUtils.post().url("http://192.168.30.3:9999/").headers(headers).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                dialog.dismiss();
                 mTextView.setText(e.toString());
             }
 
             @Override
             public void onResponse(String response, int id) {
-                dialog.dismiss();
                 response = (System.currentTimeMillis() - startTime) + "\n" + response;
                 mTextView.setText(response);
             }

@@ -22,7 +22,7 @@ public class MapActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_map);
-		MapImageView imageView = (MapImageView) findViewById(R.id.map);
+		MapImageView imageView = findViewById(R.id.map);
 		imageView.setDataMap(getMapDataByFileName(this, "ahyd"));
 		imageView.setMapAndTextBitmap(
 				BitmapFactory.decodeResource(getResources(), R.drawable.ahyd),

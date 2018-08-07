@@ -31,17 +31,21 @@ public class TestViewModel extends ViewModel {
     }
 
     private void loadData() {
-        Observable.just(1).map(new Function<Integer, Response>() {
-            @Override
-            public Response apply(@NonNull Integer integer) throws Exception {
-                return OkHttpUtils.get().url("http://www.baidu.com").build().execute();
-            }
-        }).map(new Function<Response, String>() {
-            @Override
-            public String apply(@NonNull Response response) throws Exception {
-                return response.body().string();
-            }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        Observable.just(1)
+                .map(new Function<Integer, Response>() {
+                    @Override
+                    public Response apply(@NonNull Integer integer) throws Exception {
+                        return OkHttpUtils.get().url("http://www.baidu.com").build().execute();
+                    }
+                })
+                .map(new Function<Response, String>() {
+                    @Override
+                    public String apply(@NonNull Response response) throws Exception {
+                        return response.body().string();
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

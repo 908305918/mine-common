@@ -16,7 +16,7 @@ public class TreeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_tree);
-		listView = (ListView) super.findViewById(R.id.list_tree);
+		listView = super.findViewById(R.id.list_tree);
 		TreeAdapter adapter = new TreeAdapter(listView, this, initTreeNodes());
 		listView.setAdapter(adapter);
 	}

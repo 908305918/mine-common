@@ -15,7 +15,7 @@ public class LargeImageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_largeimage);
-		imageView = (LargeImageView) super.findViewById(R.id.large_image);
+		imageView = super.findViewById(R.id.large_image);
 		try {
 			InputStream is = getAssets().open("qm.jpg");
 			imageView.setInputStream(is);

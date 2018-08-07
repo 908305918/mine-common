@@ -40,8 +40,8 @@ public class ImagePickerActivity extends Activity {
     }
 
     private void initViews() {
-        mRecyclerView = (RecyclerView) this.findViewById(R.id.rv_picture);
-        mSendImageBut = (Button) this.findViewById(R.id.btn_send_image);
+        mRecyclerView = this.findViewById(R.id.rv_picture);
+        mSendImageBut = this.findViewById(R.id.btn_send_image);
         mImageAdapter = new ImageAdapter(this, mAllImageList, mSendImageBut);
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));

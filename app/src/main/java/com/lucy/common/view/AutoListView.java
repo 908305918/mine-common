@@ -106,7 +106,7 @@ public class AutoListView extends ListView implements OnScrollListener {
 	 * 定义加载更多接口
 	 */
 	public interface OnLoadListener {
-		public void onLoad();
+		void onLoad();
 	}
 
 }

@@ -39,6 +39,6 @@ public class BestTimer implements Runnable {
 
 	public interface BestTimerListener {
 
-		public void timerUp();
+		void timerUp();
 	}
 }

@@ -6,6 +6,7 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -72,20 +73,22 @@ public class DragFrameLayout extends FrameLayout {
                 //这里修复一些华为手机无法触发点击事件的问题
                 int distance = (int) Math.sqrt(dx * dx + dy * dy);
                 if (distance == 0) {
-                    isDrag = false;
+                    //isDrag = false;
                     break;
                 }
                 float x = getX() + dx;
                 float y = getY() + dy;
+                Log.e("Move", x + "===" + y);
                 //检测是否到达边缘 左上右下
                 x = x < 0 ? 0 : x > screenWidth - getWidth() ? screenWidth - getWidth() : x;
-                y = y < statusHeight ? statusHeight : y + getHeight() > screenHeight ? screenHeight - getHeight() : y;
+                y = y < 0 ? 0 : (y + getHeight() > screenHeight - statusHeight ? screenHeight - statusHeight - getHeight() : y);
                 setX(x);
                 setY(y);
                 lastX = rawX;
                 lastY = rawY;
                 break;
             case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
                 if (isDrag) {
                     //恢复按压效果
                     setPressed(false);

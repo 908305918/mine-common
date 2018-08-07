@@ -137,16 +137,16 @@ public class DecodeHandler extends Handler {
 	}
 
 	/**
-	 * A factory method to build the appropriate LuminanceSource object based on
+	 * a factory method to build the appropriate LuminanceSource object based on
 	 * the format of the preview buffers, as described by Camera.Parameters.
 	 * 
 	 * @param data
-	 *            A preview frame.
+	 *            a preview frame.
 	 * @param width
 	 *            The width of the image.
 	 * @param height
 	 *            The height of the image.
-	 * @return A PlanarYUVLuminanceSource instance.
+	 * @return a PlanarYUVLuminanceSource instance.
 	 */
 	public PlanarYUVLuminanceSource buildLuminanceSource(byte[] data, int width, int height) {
 		Rect rect = activity.getCropRect();

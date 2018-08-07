@@ -28,7 +28,7 @@ public class OpenCameraInterface {
 	 * Opens the requested camera with {@link Camera#open(int)}, if one exists.
 	 * 
 	 * @param cameraId
-	 *            camera ID of the camera to use. A negative value means
+	 *            camera ID of the camera to use. a negative value means
 	 *            "no preference"
 	 * @return handle to {@link Camera} that was opened
 	 */

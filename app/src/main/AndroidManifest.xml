@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -57,8 +58,12 @@
         </receiver>
 
         <activity android:name=".activity.TextViewActivity" />
-        <activity android:name="com.lucy.lifecycle.LifecycleTestActivity"/>
-        <activity android:name=".activity.RxJavaActivity"/>
+        <activity android:name="com.lucy.lifecycle.LifecycleTestActivity" />
+        <activity android:name=".activity.RxJavaActivity" />
+
+        <activity android:name="com.lucy.face.FaceActivity" />
+
+        <service android:name=".service.AudioService" />
 
     </application>
 

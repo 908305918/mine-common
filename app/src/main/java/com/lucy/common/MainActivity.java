@@ -21,6 +21,7 @@ import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
 import com.lucy.common.view.MarqueeTextView;
+import com.lucy.face.FaceActivity;
 import com.lucy.lifecycle.LifecycleTestActivity;
 import com.lucy.tree.TreeActivity;
 
@@ -45,7 +46,7 @@ public class MainActivity extends Activity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "RxJava", "item11", "item12",
+                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "RxJava", "Face", "item12",
                 "item13", "item14", "item15", "item16"};
 
         @Override
@@ -99,6 +100,10 @@ public class MainActivity extends Activity {
                             break;
                         case 9:
                             intent = new Intent(MainActivity.this, RxJavaActivity.class);
+                            startActivity(intent);
+                            break;
+                        case 10:
+                            intent = new Intent(MainActivity.this, FaceActivity.class);
                             startActivity(intent);
                             break;
                     }

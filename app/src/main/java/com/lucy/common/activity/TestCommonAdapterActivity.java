@@ -28,7 +28,7 @@ public class TestCommonAdapterActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_common_adapter);
-		listView = (ListView) findViewById(R.id.listview);
+		listView = findViewById(R.id.listview);
 		footView = createIndeterminateProgressView();
 		getData();
 		adapter = new CommonAdapter<Object>(this, dataList, R.layout.item_textview) {

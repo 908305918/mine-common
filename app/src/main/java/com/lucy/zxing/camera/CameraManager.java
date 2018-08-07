@@ -166,7 +166,7 @@ public class CameraManager {
 	}
 
 	/**
-	 * A single preview frame will be returned to the handler supplied. The data
+	 * a single preview frame will be returned to the handler supplied. The data
 	 * will arrive as byte[] in the message.obj field, with width and height
 	 * encoded as message.arg1 and message.arg2, respectively.
 	 * 
@@ -188,7 +188,7 @@ public class CameraManager {
 	 * it automatically based on available cameras and their orientation.
 	 * 
 	 * @param cameraId
-	 *            camera ID of the camera to use. A negative value means
+	 *            camera ID of the camera to use. a negative value means
 	 *            "no preference".
 	 */
 	public synchronized void setManualCameraId(int cameraId) {

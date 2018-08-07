@@ -54,13 +54,13 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_capture);
-		scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
-		scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
-		scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
-		scanLine = (ImageView) findViewById(R.id.capture_scan_line);
-		scanCancel = (TextView) findViewById(R.id.scan_cancel);
-		btnLight = (ImageButton) findViewById(R.id.btn_light);
-		textLight = (TextView) findViewById(R.id.text_light);
+		scanPreview = findViewById(R.id.capture_preview);
+		scanContainer = findViewById(R.id.capture_container);
+		scanCropView = findViewById(R.id.capture_crop_view);
+		scanLine = findViewById(R.id.capture_scan_line);
+		scanCancel = findViewById(R.id.scan_cancel);
+		btnLight = findViewById(R.id.btn_light);
+		textLight = findViewById(R.id.text_light);
 		scanCancel.setOnClickListener(this);
 		btnLight.setOnClickListener(this);
 
@@ -149,7 +149,7 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback,
 	}
 
 	/**
-	 * A valid barcode has been found, so give an indication of success and show
+	 * a valid barcode has been found, so give an indication of success and show
 	 * the results.
 	 * 
 	 * @param rawResult

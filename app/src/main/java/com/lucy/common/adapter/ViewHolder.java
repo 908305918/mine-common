@@ -179,7 +179,7 @@ public class ViewHolder {
 	 * @param checked
 	 */
 	public ViewHolder setChecked(int viewId, boolean checked) {
-		Checkable view = (Checkable) getView(viewId);
+		Checkable view = getView(viewId);
 		if (view != null) {
 			view.setChecked(checked);
 		}
