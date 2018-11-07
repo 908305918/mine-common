@@ -11,8 +11,8 @@ android {
 
     defaultConfig {
         applicationId "com.lucy.common"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion 18
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -52,8 +52,5 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
 
     implementation 'com.tencent.sonic:sdk:1.1.1'
-
-    implementation 'io.fotoapparat:facedetector:1.0.0'
-    implementation 'io.fotoapparat.fotoapparat:library:1.2.0'
 
 }

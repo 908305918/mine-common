@@ -21,7 +21,6 @@ import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
 import com.lucy.common.view.MarqueeTextView;
-import com.lucy.face.FaceActivity;
 import com.lucy.lifecycle.LifecycleTestActivity;
 import com.lucy.tree.TreeActivity;
 
@@ -103,8 +102,8 @@ public class MainActivity extends Activity {
                             startActivity(intent);
                             break;
                         case 10:
-                            intent = new Intent(MainActivity.this, FaceActivity.class);
-                            startActivity(intent);
+
+
                             break;
                     }
                 }

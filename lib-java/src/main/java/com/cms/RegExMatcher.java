@@ -11,6 +11,7 @@ public class RegExMatcher {
         findVolume3();
         findNumberField1();
         findNumberField2();
+        findAddress();
     }
 
 
@@ -80,6 +81,17 @@ public class RegExMatcher {
             double v = Double.parseDouble(m.group(2));
             double w = Double.parseDouble(m.group(3));
             System.out.println("件数=" + num + "重量=" + w + "体积=" + v);
+        }
+    }
+
+    private static void findAddress(){
+        String str = "12 156 0.3 货在上海 飞西班牙 月底出运";
+        String pattern = "货在(上海|西班牙)";
+        Pattern r = Pattern.compile(pattern);
+
+        Matcher m = r.matcher(str);
+        while (m.find()) {
+            System.out.println("始发港=" + m.group(0));
         }
     }
 }

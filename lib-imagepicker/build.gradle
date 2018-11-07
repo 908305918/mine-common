@@ -4,11 +4,8 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion 18
+        targetSdkVersion 26
     }
     buildTypes {
         release {
@@ -23,4 +20,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2', {
+        exclude group: 'com.android.support'
+    }
 }
