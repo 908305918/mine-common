@@ -2,10 +2,12 @@ package com.lucy.common.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.lucy.common.R;
+import com.lucy.common.dialog.Loading;
 import com.lucy.common.view.StateButton;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -18,7 +20,7 @@ import okhttp3.Call;
 /**
  * Created by Administrator on 2016/11/15.
  */
-public class StateButtonActivity extends Activity {
+public class StateButtonActivity extends AppCompatActivity {
     private TextView mTextView;
 
     @Override
@@ -53,12 +55,9 @@ public class StateButtonActivity extends Activity {
     }
 
     private void request(boolean gzip) {
-        final long startTime = System.currentTimeMillis();
-        Map<String, String> headers = new HashMap<>();
-        if (!gzip) {
-            headers.put("Accept-Encoding", "");
-        }
-        OkHttpUtils.post().url("http://192.168.30.3:9999/").headers(headers).build().execute(new StringCallback() {
+        final Loading loading = new Loading();
+        loading.show(getSupportFragmentManager());
+        OkHttpUtils.post().url("https://www.baidu.com/").build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
                 mTextView.setText(e.toString());
@@ -66,8 +65,8 @@ public class StateButtonActivity extends Activity {
 
             @Override
             public void onResponse(String response, int id) {
-                response = (System.currentTimeMillis() - startTime) + "\n" + response;
                 mTextView.setText(response);
+                loading.dismiss();
             }
         });
     }
