@@ -1,4 +1,4 @@
-package com.lucy.common.dialog;
+package com.lucy.common.dialogfragment;
 
 import com.lucy.common.R;
 

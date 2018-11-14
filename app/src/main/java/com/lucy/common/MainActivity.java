@@ -3,7 +3,6 @@ package com.lucy.common;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +20,6 @@ import com.lucy.common.activity.StateButtonActivity;
 import com.lucy.common.activity.TestCommonAdapterActivity;
 import com.lucy.common.activity.TextViewActivity;
 import com.lucy.common.activity.WebViewActivity;
-import com.lucy.common.dialog.Loading;
 import com.lucy.common.view.MarqueeTextView;
 import com.lucy.lifecycle.LifecycleTestActivity;
 import com.lucy.tree.TreeActivity;
@@ -43,9 +41,6 @@ public class MainActivity extends FragmentActivity {
         textView.init();
         textView.startScroll();
 
-        Loading loading = new Loading();
-        loading.show(getSupportFragmentManager(),"loading");
-        //loading.dismiss();
     }
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {

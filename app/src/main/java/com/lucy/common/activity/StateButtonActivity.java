@@ -1,19 +1,18 @@
 package com.lucy.common.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.lucy.common.R;
-import com.lucy.common.dialog.Loading;
+import com.lucy.common.dialog.ViewHolder;
+import com.lucy.common.dialog.ListDialog;
+import com.lucy.common.dialog.XDialog;
+import com.lucy.common.dialogfragment.Loading;
 import com.lucy.common.view.StateButton;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import okhttp3.Call;
 
@@ -55,6 +54,7 @@ public class StateButtonActivity extends AppCompatActivity {
     }
 
     private void request(boolean gzip) {
+        ListDialog dialog = new ListDialog(this);
         final Loading loading = new Loading();
         loading.show(getSupportFragmentManager());
         OkHttpUtils.post().url("https://www.baidu.com/").build().execute(new StringCallback() {
@@ -69,6 +69,16 @@ public class StateButtonActivity extends AppCompatActivity {
                 loading.dismiss();
             }
         });
+
+
+        new XDialog(this, R.layout.dialog_loading)
+                .setViewCreator(new XDialog.ViewCreator() {
+                    @Override
+                    public void onCreateView(ViewHolder holder) {
+
+                    }
+                })
+                .show();
     }
 
 }

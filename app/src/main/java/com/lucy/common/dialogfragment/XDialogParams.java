@@ -1,4 +1,4 @@
-package com.lucy.common.dialog;
+package com.lucy.common.dialogfragment;
 
 public class XDialogParams {
 

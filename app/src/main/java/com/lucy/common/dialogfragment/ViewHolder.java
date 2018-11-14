@@ -1,6 +1,5 @@
-package com.lucy.common.dialog;
+package com.lucy.common.dialogfragment;
 
-import android.content.Context;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -8,19 +7,19 @@ import android.widget.TextView;
 
 public class ViewHolder {
     private final SparseArray<View> mViews;
-    private View mDialogView;
+    private View mConvertView;
 
-    private ViewHolder(Context context, int layoutId) {
+    private ViewHolder(View view) {
         this.mViews = new SparseArray<>();
-        mDialogView = View.inflate(context, layoutId, null);
+        mConvertView = view;
     }
 
-    public static ViewHolder get(Context context, int layoutId) {
-        return new ViewHolder(context, layoutId);
+    public static ViewHolder get(View view) {
+        return new ViewHolder(view);
     }
 
-    public View getDialogView() {
-        return mDialogView;
+    public View getConvertView() {
+        return mConvertView;
     }
 
     /**
@@ -33,7 +32,7 @@ public class ViewHolder {
     public <T extends View> T findView(int viewId) {
         View view = mViews.get(viewId);
         if (view == null) {
-            view = mDialogView.findViewById(viewId);
+            view = mConvertView.findViewById(viewId);
             mViews.put(viewId, view);
         }
         return (T) view;
