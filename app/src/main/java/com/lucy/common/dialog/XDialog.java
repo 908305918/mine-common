@@ -10,11 +10,6 @@ import android.view.WindowManager;
 
 import com.lucy.common.R;
 
-
-/**
- * Created by WD on 2017/3/20.
- */
-
 public class XDialog {
     protected Context mContext;
     protected Dialog mDialog;

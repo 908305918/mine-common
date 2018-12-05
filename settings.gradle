@@ -1,1 +1,1 @@
-include ':app', ':lib-imagepicker', ':lib-java', ':lib-jsbridge'
+include ':app', ':lib-jsbridge'

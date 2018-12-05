@@ -29,7 +29,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':lib-imagepicker')
     implementation project(':lib-jsbridge')
     implementation 'net.idik:slimadapter:2.1.0', {
         exclude group: 'com.android.support'
