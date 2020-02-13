@@ -67,7 +67,7 @@ public class MainActivity extends FragmentActivity {
 
     public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         private String[] mData = new String[]{"高清加载巨图", "测试CommonAdapter", "选择图片", "组织导航地图",
-                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "RxJava", "Face", "item12",
+                "树形结构", "StateButton", "WebView", "TextView", "Lifecycle", "RxJava", "Face", "增加开源协议",
                 "item13", "item14", "item15", "item16"};
 
         @Override
